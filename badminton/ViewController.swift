@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     }
     @IBAction func teamAButton(_ sender: UIButton) {
         
-        num += 1
+        num = num + 1
         
         labelA.text = String(num)
         
