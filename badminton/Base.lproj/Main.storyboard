@@ -3,6 +3,7 @@
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,8 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u5d-qw-Nr3">
-                                <rect key="frame" x="20" y="442" width="335" height="195"/>
+                            <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u5d-qw-Nr3">
+                                <rect key="frame" x="20" y="442" width="335" height="158"/>
                                 <color key="backgroundColor" systemColor="systemTealColor"/>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <state key="normal" title="Team B"/>
@@ -38,7 +39,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Score A = 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YWb-6E-kqW">
-                                <rect key="frame" x="47" y="276" width="308" height="39"/>
+                                <rect key="frame" x="47" y="276" width="231" height="39"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="39" id="FA0-BQ-xu2"/>
                                 </constraints>
@@ -47,7 +48,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Score B = 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SkZ-ts-vLt">
-                                <rect key="frame" x="47" y="334" width="308" height="39"/>
+                                <rect key="frame" x="47" y="334" width="231" height="39"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="39" id="CV1-Jx-y1J"/>
                                 </constraints>
@@ -59,9 +60,31 @@
                                 <rect key="frame" x="253" y="238" width="102" height="30"/>
                                 <color key="backgroundColor" systemColor="linkColor"/>
                                 <color key="tintColor" systemColor="labelColor"/>
-                                <state key="normal" title="Reset"/>
+                                <state key="normal" title="Rst score"/>
                                 <connections>
                                     <action selector="resetBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DDm-89-Ot0"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A Set" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nD0-0r-M4L">
+                                <rect key="frame" x="272" y="294" width="41" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="B Set" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BzS-WA-aul">
+                                <rect key="frame" x="272" y="342" width="41" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NIP-gE-5SM">
+                                <rect key="frame" x="253" y="388" width="102" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" title="rst set"/>
+                                <connections>
+                                    <action selector="resetSet:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3z8-ay-KyY"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -69,12 +92,16 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="u5d-qw-Nr3" firstAttribute="top" secondItem="SkZ-ts-vLt" secondAttribute="bottom" constant="69" id="1ge-JM-i6d"/>
+                            <constraint firstItem="nD0-0r-M4L" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="272" id="5kc-v1-bKn"/>
                             <constraint firstItem="Jtl-5T-YBf" firstAttribute="trailing" secondItem="u5d-qw-Nr3" secondAttribute="trailing" id="B94-NM-bbK"/>
                             <constraint firstItem="Yx8-ep-zuw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="257" id="Baf-ib-C7D"/>
                             <constraint firstItem="Jtl-5T-YBf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ESr-nG-Xh8"/>
                             <constraint firstItem="Jtl-5T-YBf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ETL-Cr-kH0"/>
+                            <constraint firstItem="BzS-WA-aul" firstAttribute="firstBaseline" secondItem="SkZ-ts-vLt" secondAttribute="firstBaseline" id="HQK-PJ-vfx"/>
+                            <constraint firstItem="nD0-0r-M4L" firstAttribute="leading" secondItem="BzS-WA-aul" secondAttribute="leading" id="OZA-js-r5u"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="u5d-qw-Nr3" secondAttribute="bottom" constant="30" id="RQQ-k3-b1z"/>
                             <constraint firstItem="YWb-6E-kqW" firstAttribute="top" secondItem="Yx8-ep-zuw" secondAttribute="bottom" constant="8" id="RoO-1z-cbR"/>
+                            <constraint firstItem="nD0-0r-M4L" firstAttribute="bottom" secondItem="YWb-6E-kqW" secondAttribute="bottom" id="aeE-7e-vJA"/>
                             <constraint firstItem="Jtl-5T-YBf" firstAttribute="leading" secondItem="u5d-qw-Nr3" secondAttribute="leading" id="ahE-gx-Vm8"/>
                             <constraint firstItem="YWb-6E-kqW" firstAttribute="top" secondItem="Jtl-5T-YBf" secondAttribute="bottom" constant="59" id="dEo-Lm-ZUG"/>
                             <constraint firstItem="Jtl-5T-YBf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="38" id="fnY-Ra-JcP"/>
@@ -83,11 +110,14 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YWb-6E-kqW" secondAttribute="trailing" constant="169" id="lhp-I2-njo"/>
                             <constraint firstItem="YWb-6E-kqW" firstAttribute="trailing" secondItem="SkZ-ts-vLt" secondAttribute="trailing" id="oTq-Fb-CBP"/>
                             <constraint firstItem="YWb-6E-kqW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="47" id="xSt-8p-1nO"/>
+                            <constraint firstItem="Yx8-ep-zuw" firstAttribute="trailing" secondItem="Jtl-5T-YBf" secondAttribute="trailing" id="zbB-pi-vVC"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="labelA" destination="YWb-6E-kqW" id="flk-2t-gPW"/>
                         <outlet property="labelB" destination="SkZ-ts-vLt" id="xjx-dk-YfL"/>
+                        <outlet property="setA" destination="nD0-0r-M4L" id="RVM-co-p8V"/>
+                        <outlet property="setB" destination="BzS-WA-aul" id="7hI-cR-5AS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -96,6 +126,9 @@
         </scene>
     </scenes>
     <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

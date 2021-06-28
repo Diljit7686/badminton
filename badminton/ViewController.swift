@@ -11,10 +11,14 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var labelA: UILabel!
     @IBOutlet weak var labelB: UILabel!
+    @IBOutlet weak var setA: UILabel!
+    @IBOutlet weak var setB: UILabel!
     
     
     var num = 0
     var num2 = 0
+    var winner1 = 0
+    var winner2 = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +35,10 @@ class ViewController: UIViewController {
             print("team A wins!!")
             labelA.text = String("team A wins")
             labelB.text = String("team A wins")
+            winner1 += 1
+            setA.text = String(winner1)
+            
+            showAlertA()
             DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
                    //call any function
                 self.reset()
@@ -42,6 +50,9 @@ class ViewController: UIViewController {
             print("team A winss!!")
             labelA.text = String("team A wins")
             labelB.text = String("team A wins")
+            winner1 += 1
+            setA.text = String(winner1)
+            showAlertA()
             DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
                    //call any function
                 self.reset()
@@ -63,6 +74,9 @@ class ViewController: UIViewController {
             print("team B wins!!")
             labelA.text = String("team B wins")
             labelB.text = String("team B wins")
+            winner2 += 1
+            setB.text = String(winner2)
+            showAlertB()
             DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
                    //call any function
                 self.reset()
@@ -73,6 +87,12 @@ class ViewController: UIViewController {
             print("team B winss!!")
             labelA.text = String("team B wins")
             labelB.text = String("team B wins")
+            
+            winner2 += 1
+            
+            setB.text = String(winner2)
+            showAlertB()
+            
             DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
                    //call any function
                 self.reset()
@@ -82,6 +102,21 @@ class ViewController: UIViewController {
     @IBAction func resetBtn(_ sender: UIButton) {
         reset()
     }
+    @IBAction func resetSet(_ sender: UIButton) {
+        resetSet()
+        
+    }
+    
+    func resetSet()
+    {
+        winner1 = 0
+        winner2 = 0
+        
+        setA.text = String("0")
+        setB.text = String("0")
+    }
+    
+    
     func reset(){
         num = 0
         num2 = 0
@@ -89,6 +124,26 @@ class ViewController: UIViewController {
         labelA.text = String("0")
         labelB.text = String("0")
     }
+    
+    
+   func showAlertA() {
+    
+        let alertController = UIAlertController(title: "Team A won", message:
+            "", preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
+
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    
+    func showAlertB() {
+     
+         let alertController = UIAlertController(title: "Team B won", message:
+             "", preferredStyle: .alert)
+         alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
+
+         self.present(alertController, animated: true, completion: nil)
+     }
     
 }
 
